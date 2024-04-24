@@ -1,16 +1,16 @@
 <template>
   <div>
     <v-row>
-      <v-col v-for="article in articles" :key="article.id">
+      <v-col v-for="work in works" :key="work.id">
         <v-card>
           <v-img src="https://cdn.vuetifyjs.com/images/cards/docks.jpg"></v-img>
-          <v-card-title>{{article.title}}</v-card-title>
+          <v-card-title>{{work.title}}</v-card-title>
           <v-card-text>
-            <div>{{article.id}}</div>
+            <div>{{work.id}}</div>
             <div>Whitsunday Island, Whitsunday Islands</div>
           </v-card-text>
           <v-card-action>
-            <router-link :to="{name:'article-detail',params:{id:article.id}}">
+            <router-link :to="{name:'works-detail',params:{id:work.id}}">
               <v-btn>More</v-btn>
             </router-link>
           </v-card-action>
@@ -30,14 +30,14 @@ export default {
   //   HelloWorld
   // }
   data: () => ({
-    articles: []
+    works: []
   }),
 
   async mounted() {
     const response = await axios.get('https://85hz3u9qwx.microcms.io/api/v1/work', {
       headers: { "X-API-KEY": process.env.VUE_APP_XMicrocmsApiKey }
     })
-    this.articles = response.data.contents
+    this.works = response.data.contents
   }
 }
 </script>

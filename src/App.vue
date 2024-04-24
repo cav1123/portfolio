@@ -3,12 +3,11 @@
     <v-container>
       <v-app-bar>
         <v-toolbar-title>
-          <h1><router-link to="/">Home</router-link></h1>
+          <router-link to="/portfolio">Portfolio</router-link>
         </v-toolbar-title>
         <v-spacer></v-spacer>
         <nav>
-          <router-link to="/">Home</router-link>
-          <router-link to="/about">About</router-link>
+          <!-- <router-link to="/about">About</router-link> -->
         </nav>
       </v-app-bar>
       <router-view />
